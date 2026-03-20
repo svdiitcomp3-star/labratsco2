@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroSense Dynamics - AgroSafe</title>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: #0f0f1a;
+    color: white;
+    overflow-x:hidden;
+}
+
+/* 🌌 Light background animation */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle, rgba(0,247,255,0.05), transparent 40%),
+                radial-gradient(circle, rgba(255,0,255,0.05), transparent 40%);
+    animation: moveBg 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    0%{transform:translate(0,0);}
+    50%{transform:translate(-20%,-20%);}
+    100%{transform:translate(0,0);}
+}
+
+/* Navbar */
+
+nav{
+    position: fixed;
+    width:100%;
+    background: rgba(0,0,0,0.8);
+    padding:15px 0;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:#00f7ff;
+    text-decoration:none;
+    margin:0 25px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* Sections */
+
+section{
+    padding:100px 20px;
+    min-height:100vh;
+    text-align:center;
+}
+
+h1{
+    font-size:50px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+h2{
+    font-size:35px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* Button */
+
+button{
+    padding:12px 25px;
+    background:#00f7ff;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+}
+
+/* Form */
+
+form{
+    max-width:500px;
+    margin:auto;
+    text-align:left;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+.radio-group{
+    margin:10px 0;
+}
+
+footer{
+    background:black;
+    padding:20px;
+    text-align:center;
+    color:#888;
+}
+
+.success-message{
+    display:none;
+    margin-top:20px;
+    color:#00ffae;
+    font-size:18px;
+    text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">What is this Project?</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Help / Contact</a>
+    <a href="#order">Order</a>
+</nav>
+
+<section id="home">
+    <h1>AgroSense Dynamics</h1>
+    <h2>AgroSafe – Smart Animal Deterrent System</h2>
+    <p>
+        A futuristic 3D printed stationary robot designed to protect agricultural lands 
+        and gardens from animal disturbances using smart deterrent technologies.
+    </p>
+    <br>
+    <button onclick="location.href='#order'">Pre-Order Now</button>
+</section>
+
+<section id="about">
+    <h2>About AgroSafe</h2>
+    <p>
+        AgroSafe is an innovative 3D printed robotic system that remains fixed in one location 
+        and protects crops from animals, especially peacocks and other field intruders.
+    </p>
+
+    <br><br>
+
+    <p>
+        <strong>V1:</strong> IoT-based laser robot that activates at night and rotates its head to deter animals.<br><br>
+        <strong>V2:</strong> AI-based ESP32-CAM system that detects animals and activates water spraying.<br><br>
+        <strong>V3:</strong> Combination of V1 and V2 mounted on a moving robot for full field coverage.<br><br>
+        <strong>V4:</strong> Security system with ESP32-CAM for motor room protection and theft detection.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <p>
+        ✔ On-site installation in your farm or garden<br><br>
+        ✔ System calibration for your specific crop area<br><br>
+        ✔ Maintenance & repair support<br><br>
+        ✔ Annual service package<br><br>
+        ✔ 24/7 customer technical assistance<br><br>
+        ✔ Free water level monitor<br><br>
+        ✔ Free soil moisture monitor<br><br>
+        ✔ Free installation of rain water opening tank
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Help / Contact</h2>
+    <p>
+        Email: agrosensedynamics@gmail.com<br><br>
+        Phone: 9042952289<br><br>
+        We are happy to support you with any queries regarding AgroSafe.
+    </p>
+</section>
+
+<section id="order">
+    <h2>Pre-Order AgroSafe</h2>
+
+    <!-- 🎛 Slider -->
+    <input type="range" min="1" max="4" value="1" id="versionSlider">
+
+    <p id="versionDetails">
+        V1 - ₹700 - IoT Laser Robot
+    </p>
+
+    <!-- 🔽 Combo Box -->
+    <select id="versionSelect">
+        <option>V1 - ₹700</option>
+        <option>V2 - ₹1600</option>
+        <option>V3 - ₹2400</option>
+        <option>V4 - ₹2500</option>
+    </select>
+
+    <form id="orderForm">
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email (Gmail preferred):</label>
+        <input type="email" placeholder="Enter your Gmail" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+
+        <div class="radio-group">
+            <label><strong>Payment Method:</strong></label><br><br>
+            <input type="radio" name="payment" required> Cash on Delivery<br>
+            <input type="radio" name="payment"> GPay<br>
+            <input type="radio" name="payment"> Card Pay
+        </div>
+
+        <br>
+        <button type="submit">Pre-Order Now</button>
+    </form>
+
+    <p class="success-message" id="successMessage">
+        ✅ Order placed successfully! <br><br>
+        We will contact you through Gmail: <br><br>
+        Official Contact: agrosensedynamics@gmail.com
+    </p>
+</section>
+
+<footer>
+    © 2026 AgroSense Dynamics | Lab rats & co. | All Rights Reserved
+</footer>
+
+<script>
+
+// Slider logic
+const details = [
+    "V1 - ₹700 - IoT Laser Robot",
+    "V2 - ₹1600 - AI Detection System",
+    "V3 - ₹2400 - Moving Robot System",
+    "V4 - ₹2500 - Security Monitoring"
+];
+
+document.getElementById("versionSlider").addEventListener("input", function(){
+    document.getElementById("versionDetails").innerText = details[this.value - 1];
+});
+
+// Form submit
+document.getElementById("orderForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    document.getElementById("successMessage").style.display = "block";
+    this.reset();
+});
+
+</script>
+
+</body>
+</html>
